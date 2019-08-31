@@ -19,11 +19,23 @@ IF %shouldRun% == 1 (
     ECHO Pressed key {UP} after !idleTime!ms delay.
 )
 
+IF %shouldRun% == 1 (
+    CALL :getIdleTimeInMs !idleTime! idleTime
+    %SendKeys% !idleTime! "c"
+    ECHO Pressed key {c} after !idleTime!ms delay.
+)
+
 SET /A shouldRun = %RANDOM% %% 2
 IF %shouldRun% == 1 (
     CALL :getIdleTimeInMs !idleTime! idleTime
     %SendKeys% !idleTime! "{DOWN}"
     ECHO Pressed key {DOWN} after !idleTime!ms delay.
+)
+
+IF %shouldRun% == 1 (
+    CALL :getIdleTimeInMs !idleTime! idleTime
+    %SendKeys% !idleTime! "l"
+    ECHO Pressed key {l} after !idleTime!ms delay.
 )
 
 SET /A shouldRun = %RANDOM% %% 2
@@ -33,11 +45,23 @@ IF %shouldRun% == 1 (
     ECHO Pressed key {LEFT} after !idleTime!ms delay.
 )
 
+IF %shouldRun% == 1 (
+    CALL :getIdleTimeInMs !idleTime! idleTime
+    %SendKeys% !idleTime! "p"
+    ECHO Pressed key {p} after !idleTime!ms delay.
+)
+
 SET /A shouldRun = %RANDOM% %% 2
 IF %shouldRun% == 1 (
     CALL :getIdleTimeInMs !idleTime! idleTime
     %SendKeys% !idleTime! "{RIGHT}"
     ECHO Pressed key {RIGHT} after !idleTime!ms delay.
+)
+
+IF %shouldRun% == 1 (
+    CALL :getIdleTimeInMs !idleTime! idleTime
+    %SendKeys% !idleTime! "b"
+    ECHO Pressed key {b} after !idleTime!ms delay.
 )
 
 SET /A shouldRun = %RANDOM% %% 2
