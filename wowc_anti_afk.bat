@@ -19,6 +19,14 @@ SET /A idleTime=%RANDOM% * 10 / 32768 + 1
 SET /A idleTime=%idleTime% * 1000
 %SendKeys% %idleTime% " "
 ECHO Pressed key {SPACE} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 10 / 32768 + 1
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "3"
+ECHO Pressed key {3} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 10 / 32768 + 1
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% " "
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
 
 SET /A idleTime=%RANDOM% * 300 / 32768 + 310
 SET /A idleTime=%idleTime% * 1000
@@ -49,6 +57,14 @@ SET /A idleTime=%RANDOM% * 10 / 32768 + 1
 SET /A idleTime=%idleTime% * 1000
 %SendKeys% %idleTime% " "
 ECHO Pressed key {SPACE} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 10 / 32768 + 1
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% " "
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 10 / 32768 + 1
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "3"
+ECHO Pressed key {3} after %idleTime%ms delay.
 SET /A idleTime=%RANDOM% * 10 / 32768 + 1
 SET /A idleTime=%idleTime% * 1000
 %SendKeys% %idleTime% " "
