@@ -71,37 +71,6 @@ FOR /L %%x in (1, 1, !repeatAmount!) do (
 EXIT /B 0
 
 
-:: define a function to get a random idle time to try to simulate human behavior
-:getIdleTimeInMs
-IF %~1 LEQ 500 (
-    :: burst mode
-    IF !RANDOM! LSS 29000 (
-        :: have about 90% chance to keep staying in the burst mode
-        SET /A idle=!RANDOM! * 500 / 32768 + 100
-        SET /A %~2=!idle!
-    ) ELSE (
-        SET /A idle=!RANDOM! * 100 / 32768 + 1
-        SET /A idle=!RANDOM! * !idle! / 32768 + 1
-        SET /A idle=!RANDOM! * !idle! / 32768 + 1
-        SET /A idle=!idle! * 1000
-        SET /A %~2=!idle!
-    )
-) ELSE (
-    IF !RANDOM! LSS 10000 (
-        :: have about one third chance to get into the burst mode
-        SET /A idle=!RANDOM! * 500 / 32768 + 100
-        SET /A %~2=!idle!
-    ) ELSE (
-        SET /A idle=!RANDOM! * 100 / 32768 + 1
-        SET /A idle=!RANDOM! * !idle! / 32768 + 1
-        SET /A idle=!RANDOM! * !idle! / 32768 + 1
-        SET /A idle=!idle! * 1000
-    )
-)
-SET /A %~2=!idle!
-EXIT /B 0
-
-
 @end
 
 
