@@ -7,69 +7,52 @@ setlocal EnableDelayedExpansion
 
 :: Use %SendKeys% to send keys to the keyboard buffer
 SET SendKeys=CScript //nologo //E:JScript "%~F0"
-SET /A idleTime=100000
 
 
 :neverStop
 
-SET /A shouldRun = %RANDOM% %% 2
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "{UP}"
-    ECHO Pressed key {UP} after !idleTime!ms delay.
-)
+SET /A idleTime=%RANDOM% * 300 / 32768 + 310
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% " "
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 10 / 32768 + 1
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% " "
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
 
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "c"
-    ECHO Pressed key {c} after !idleTime!ms delay.
-)
-
-SET /A shouldRun = %RANDOM% %% 2
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "{DOWN}"
-    ECHO Pressed key {DOWN} after !idleTime!ms delay.
-)
-
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "l"
-    ECHO Pressed key {l} after !idleTime!ms delay.
-)
-
-SET /A shouldRun = %RANDOM% %% 2
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "{LEFT}"
-    ECHO Pressed key {LEFT} after !idleTime!ms delay.
-)
-
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "p"
-    ECHO Pressed key {p} after !idleTime!ms delay.
-)
-
-SET /A shouldRun = %RANDOM% %% 2
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "{RIGHT}"
-    ECHO Pressed key {RIGHT} after !idleTime!ms delay.
-)
-
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! "b"
-    ECHO Pressed key {b} after !idleTime!ms delay.
-)
-
-SET /A shouldRun = %RANDOM% %% 2
-IF %shouldRun% == 1 (
-    CALL :getIdleTimeInMs !idleTime! idleTime
-    %SendKeys% !idleTime! " "
-    ECHO Pressed key {SPACE} after !idleTime!ms delay.
-)
+SET /A idleTime=%RANDOM% * 300 / 32768 + 310
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "{ENTER}"
+ECHO Planned to log out and log in again after %idleTime%ms delay.
+ECHO Pressed key {ENTER} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 5 / 32768 + 5
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "/logout"
+ECHO Typed "/logout" after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 5 / 32768 + 5
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "{ENTER}"
+ECHO Pressed key {ENTER} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 30 / 32768 + 60
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "{ENTER}"
+ECHO Pressed key {ENTER} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 5 / 32768 + 5
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "{ENTER}"
+ECHO Pressed key {ENTER} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 5 / 32768 + 5
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "{ENTER}"
+ECHO Pressed key {ENTER} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 10 / 32768 + 1
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% " "
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
+SET /A idleTime=%RANDOM% * 10 / 32768 + 1
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% " "
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
 
 GOTO :neverStop
 
