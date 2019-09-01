@@ -11,6 +11,10 @@ SET SendKeys=CScript //nologo //E:JScript "%~F0"
 
 :neverStop
 
+SET /A idleTime=%RANDOM% * 300 / 32768 + 310
+SET /A idleTime=%idleTime% * 1000
+%SendKeys% %idleTime% "{SPACE}"
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
 CALL ::pressSpaces
 SET /A idleTime=%RANDOM% * 10 / 32768 + 1
 SET /A idleTime=%idleTime% * 1000
