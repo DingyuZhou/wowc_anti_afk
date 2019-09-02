@@ -1,6 +1,7 @@
 # wowc_anti_afk
 WoWC Anti-AFK Windows Batch Script
 
+### 注意！这个 Script 跟中文输入法不兼容。运行 Script 的时候，一定要记得把输入法切换回英文。不然 /logout 命令不能 work！！
 
 ### 用法
 
