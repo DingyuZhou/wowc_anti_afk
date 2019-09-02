@@ -39,14 +39,11 @@ SET /A idleTime=%RANDOM% * 30 / 32768 + 60
 SET /A idleTime=%idleTime% * 1000
 %SendKeys% %idleTime% "{ENTER}"
 ECHO Pressed key {ENTER} after %idleTime%ms delay.
-SET /A idleTime=%RANDOM% * 5 / 32768 + 5
+
+SET /A idleTime=%RANDOM% * 30 / 32768 + 60
 SET /A idleTime=%idleTime% * 1000
-%SendKeys% %idleTime% "{ENTER}"
-ECHO Pressed key {ENTER} after %idleTime%ms delay.
-SET /A idleTime=%RANDOM% * 5 / 32768 + 5
-SET /A idleTime=%idleTime% * 1000
-%SendKeys% %idleTime% "{ENTER}"
-ECHO Pressed key {ENTER} after %idleTime%ms delay.
+%SendKeys% %idleTime% " "
+ECHO Pressed key {SPACE} after %idleTime%ms delay.
 CALL ::pressSpaces
 SET /A idleTime=%RANDOM% * 10 / 32768 + 1
 SET /A idleTime=%idleTime% * 1000
